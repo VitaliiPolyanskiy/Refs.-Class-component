@@ -23,14 +23,14 @@ export default class StudentFormClass extends React.Component<Props> {
     const age = Number(this.ageRef.current?.value);
     const rating = Number(this.ratingRef.current?.value);
 
-           if (name !== "" && surname !== "" && age > 0 && rating >=1 && rating <= 12) {
+    if (name !== "" && surname !== "" && age > 0 && rating >= 1 && rating <= 12) {
             Swal.fire({
-                title: "Информация о студенте",
+                title: "Інформація про студента",
                 html: `
                     <div style="text-align: left; font-size: 16px;">
-                        <b>Имя:</b> ${name}<br>
-                        <b>Фамилия:</b> ${surname}<br>
-                        <b>Возраст:</b> ${age}<br>
+                        <b>Ім'я:</b> ${name}<br>
+                        <b>Прізвище:</b> ${surname}<br>
+                        <b>Вік:</b> ${age}<br>
                         <b>Рейтинг:</b> ${rating}
                     </div>
                 `,
@@ -40,10 +40,10 @@ export default class StudentFormClass extends React.Component<Props> {
             });
         } else {
             Swal.fire({
-                title: "Ошибка",
-                text: "Проверьте правильность заполнения формы.",
+                title: "Помилка",
+                text: "Перевірте правильність заповнення форми.",
                 icon: "error",
-                confirmButtonText: "Понятно",
+                confirmButtonText: "Зрозуміло",
             });
         }
   };
@@ -55,17 +55,17 @@ export default class StudentFormClass extends React.Component<Props> {
         <h2>Форма студента</h2>
 
         <div className="field">
-          <label>Имя:</label>
+          <label>Ім'я:</label>
           <input type="text" defaultValue={name} ref={this.nameRef} />
         </div>
 
         <div className="field">
-          <label>Фамилия:</label>
+          <label>Прізвище:</label>
           <input type="text" defaultValue={surname} ref={this.surnameRef} />
         </div>
 
         <div className="field">
-          <label>Возраст:</label>
+          <label>Вік:</label>
           <input type="number" defaultValue={age} ref={this.ageRef} />
         </div>
 
@@ -75,7 +75,7 @@ export default class StudentFormClass extends React.Component<Props> {
         </div>
 
         <button type="submit" className="btn btn-primary">
-          Показать данные
+          Показати дані
         </button>
       </form>
     );
